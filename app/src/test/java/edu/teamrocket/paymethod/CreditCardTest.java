@@ -1,0 +1,41 @@
+package edu.teamrocket.paymethod;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+public class CreditCardTest {
+
+    private CreditCard card = null;
+
+    @BeforeEach
+    public void setupCard() {
+        card = new CreditCard("Abradolf Lincler", "4916119711304546");
+        assertNotNull(card, "CreditCard creada");
+    }
+
+    @Test
+    public void constructorTest() {
+        assertNotNull(card, "CreditCard creada");
+        assertEquals("4916119711304546", card.number());
+    }
+
+    @Test
+    public void payTestOK() {
+        assertTrue(card.pay(2999.0));
+        assertEquals(1.0, card.credit(), 0);
+    }
+
+    @Test
+    public void payTestNOTOKZERO() {
+        assertFalse(card.pay(2999.1));
+        assertEquals(3000, card.credit(), 0.1);
+    }
+
+    @Test
+    public void payTestNOTOK() {
+        assertFalse(card.pay(4000));
+        assertEquals(3000, card.credit(), 0);
+    }
+}
