@@ -11,7 +11,7 @@ public class CreditCard {
         this.number = number;
     }
 
-    boolean pay(double precio) {
+    public boolean pay(double precio) {
         if ((credit - precio) >= 1) {
             credit -= precio;
             return true;
