@@ -21,15 +21,15 @@ public class CreditCard {
 
     }
 
-    String number() {
+    public String number() {
         return this.number;
     }
 
-    String cardOwner() {
+    public String cardOwner() {
         return this.owner;
     }
 
-    double credit() {
+    public double credit() {
         return this.credit;
     }
 
@@ -42,5 +42,5 @@ public class CreditCard {
 
         return resultado.toString();
     }
-    
+
 }
