@@ -35,7 +35,7 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = 'edu.teamrocket.Stockx'
+    mainClass = 'edu.teamrocket.RicksyBusiness'
 }
 
 tasks.named('test') {
