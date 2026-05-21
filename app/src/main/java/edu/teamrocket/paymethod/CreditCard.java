@@ -6,7 +6,7 @@ public class CreditCard {
     private double credit = 3000;
     private static final String SYMBOL = "EFI";
 
-    CreditCard(String owner, String number) {
+    public CreditCard(String owner, String number) {
         this.owner = owner;
         this.number = number;
     }
