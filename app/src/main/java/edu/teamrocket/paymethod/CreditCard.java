@@ -22,14 +22,17 @@ public class CreditCard implements PaymentMethod {
 
     }
 
+    @Override
     public String number() {
         return this.number;
     }
 
+    @Override
     public String cardOwner() {
         return this.owner;
     }
 
+    @Override
     public double credit() {
         return this.credit;
     }
