@@ -13,8 +13,8 @@ public class CreditCard implements PaymentMethod {
 
     @Override
     public boolean pay(double precio) {
-        if ((credit - precio) >= 1) {
-            credit -= precio;
+        if ((credit() - precio) >= 1) {
+            this.credit -= precio;
             return true;
         } else {
             return false;
