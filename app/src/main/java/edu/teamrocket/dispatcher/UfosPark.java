@@ -11,7 +11,7 @@ import edu.teamrocket.paymethod.PaymentMethod;
 
 public class UfosPark implements GuestDispatcher {
 
-    private double fee;
+    private double fee = 500d;
     private Map<String, String> flota = new HashMap<>();
 
     public UfosPark() {
@@ -27,7 +27,7 @@ public class UfosPark implements GuestDispatcher {
         String ufo = null;
 
         if (!flota.containsValue(card.number())) {
-            ufo = flota.entrySet().stream().filter(x -> x.getValue() == null).map(Map.Entry::getKey).findFirst()
+            ufo = flota.entrySet().stream().filter(x -> x.getValue() == null).map(Entry::getKey).findFirst()
                     .orElse(null);
         }
         if (ufo != null && card.pay(fee)) {
@@ -45,7 +45,7 @@ public class UfosPark implements GuestDispatcher {
     }
 
     public Collection<String> cardNumbers() {
-        return flota.keySet();
+        return flota.values();
     }
 
     @Override
